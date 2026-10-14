@@ -1,0 +1,10 @@
+<mat-card class="card">
+  <div class="encabezado">
+    <strong>N° {{ remision.id }}</strong>
+    <span class="estado" [ngClass]="remision.estado">{{ remision.estado | estado }}</span>
+  </div>
+  <h3>{{ remision.cliente }}</h3>
+  <p>Tel: {{ remision.telefono }} · {{ remision.fecha }}</p>
+  <p>{{ remision.items.length }} artículo(s) · Total: <strong>{{ total | cop }}</strong></p>
+  <button mat-stroked-button (click)="ver.emit(remision.id)">Ver detalle</button>
+</mat-card>
